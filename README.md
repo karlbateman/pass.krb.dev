@@ -4,9 +4,8 @@
 
 ## Introduction
 
-This is an example project which is a NextJS application with [Passage] identity service integration. It demonstrates
-how to implement fullstack passwordless authentication using WebAuthN where supported, with an email magic link
-fallback.
+This project is a fullstack, passwordless application with FIDO2 compliance, email magic link fallback
+and WebAuthN support through an integration with [Passage].
 
 [passage]: https://passage.id
 
