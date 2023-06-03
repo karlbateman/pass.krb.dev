@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --passage-button-border-radius: 0;
+  --passage-control-border-radius: 0;
+}
