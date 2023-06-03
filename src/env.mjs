@@ -8,6 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    PASSAGE_APP_ID: z.string(),
+    PASSAGE_API_KEY: z.string(),
   },
 
   /**
@@ -25,6 +27,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    PASSAGE_APP_ID: process.env.PASSAGE_APP_ID,
+    PASSAGE_API_KEY: process.env.PASSAGE_API_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
