@@ -1,28 +1,62 @@
-# Create T3 App
+# Pass
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+> Passwordless authentication demo using passage.id and NextJS.
 
-## What's next? How do I make an app with this?
+## Introduction
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+This is an example project which is a NextJS application with [Passage] identity service integration. It demonstrates
+how to implement fullstack passwordless authentication using WebAuthN where supported, with an email magic link
+fallback.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+[passage]: https://passage.id
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Prerequisites
 
-## Learn More
+This project requires [NodeJS] and [NPM] is installed and configured on your local machine. If you don't have these
+installed, I'd recommend installing [NVM] which can be used to install and manage NodeJS versions.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+[nodejs]: https://nodejs.org
+[npm]: https://npmjs.org
+[nvm]: https://github.com/nvm-sh/nvm
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Passage Setup
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+Head over to <https://passage.id> and create an account. Then from the "My Apps" page, select "+ Create New App" and
+select "Go fully passwordless", before clicking "Continue". Enter the following values when prompted:
 
-## How do I deploy this?
+```text
+Name your application: pass.krb.dev
+Enter the domain for your app: http://localhost:3000
+Enter the redirect url: http://localhost:3000/
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+> You do not need to select a tech stack.
+
+Click "Create new app" at the bottom of the page.
+
+Next, go to the "Settings -> API Keys" page and create a new API key. Take note of your `APP ID` and `API KEY` which
+will be required next when you setup this project and run it locally.
+
+## Getting Started
+
+Clone this project onto your system and follow the steps below to get things running.
+
+Run the following command to create an `.env` file.
+
+```text
+cp .env.example .env
+```
+
+Open the `.env` file and add your APP ID and API KEY which you setup in the previous section. Once these values have
+been added you can run the following command to launch the project.
+
+```text
+npm run dev
+```
+
+When the project is running, you can visit <http://localhost:3000> and go through the registration and authentication
+experiences without requiring a password.
+
+## Copyright
+
+Copyright © 2023 Karl Bateman. All Rights Reserved.
